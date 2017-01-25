@@ -6,6 +6,10 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.pramithas.entity.User;
 
+/**
+*This is the repository interface that connects service layer with datalayer
+@author Pramithas
+**/
 public interface UserRepository extends MongoRepository<User, String> {
 
 	/**
