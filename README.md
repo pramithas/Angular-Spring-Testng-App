@@ -4,8 +4,8 @@ How to run the project?
 
 1) Clone or download the project as zip to your local directory 
 2) Start MongoDB
-2) Go the the project root directory
-3) run "mvn spring-boot:run"
+3) Go the the project root directory
+4) run "mvn spring-boot:run"
 
 How to run test cases?
 
