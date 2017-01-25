@@ -8,6 +8,13 @@ import org.springframework.stereotype.Service;
 import com.pramithas.entity.User;
 import com.pramithas.repository.UserRepository;
 
+/**
+ * <p>This is the service class which sits in the middle of Repository interface 
+ * <code>UserRepository</code> and controller class <code> UserController</code>.
+ * This class basically helps the business layer communicate with data layer. </p>
+ * @author Pramithas
+ *
+ */
 @Service
 public class UserService {
 
@@ -25,8 +32,7 @@ public class UserService {
 
 	/**
 	 * 
-	 * @param user
-	 *            This parameter is the user Object
+	 * @param user This parameter is the user Object
 	 * @return This method returns a User object
 	 */
 
@@ -36,8 +42,7 @@ public class UserService {
 
 	/**
 	 * 
-	 * @param id
-	 *            This parameter contains the User id
+	 * @param id This parameter contains the User id
 	 * @return This method returns a Long value that acts as a flag
 	 */
 	public Long removeById(String id) {
@@ -46,8 +51,7 @@ public class UserService {
 
 	/**
 	 * 
-	 * @param id
-	 *            This parameter contains the user id
+	 * @param id This parameter contains the user id
 	 * @return This method returns the User object
 	 */
 	public User findById(String id) {

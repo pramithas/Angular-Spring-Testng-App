@@ -19,6 +19,11 @@ import org.springframework.web.util.UriComponentsBuilder;
 import com.pramithas.entity.User;
 import com.pramithas.service.UserService;
 
+/**
+ * <p>This is the controller class. This class acts as bridge between front end and backend</p>
+ * @author Pramithas
+ *
+ */
 @RestController
 public class UserController {
 
@@ -29,15 +34,12 @@ public class UserController {
 
 	/**
 	 * This method find a User when the ID of the user is given
-	 * 
-	 * @param id
-	 *            This parameter is the user id
+	 * @param id This parameter is the user id
 	 * @return ResponseEntity<User>
 	 */
 
 	@RequestMapping(value = "/users/{id}", method = RequestMethod.GET)
 	public ResponseEntity<User> findById(@PathVariable("id") String id) {
-		log.debug("hurray called");
 		User user = userService.findById(id);
 
 		if (user == null) {
@@ -48,13 +50,11 @@ public class UserController {
 
 	/**
 	 * This method returns all the posts
-	 * 
 	 * @return List<User>
 	 */
 
 	@RequestMapping(value = "/users", method = RequestMethod.GET)
 	public ResponseEntity<List<User>> getAllPosts() {
-		log.info("controller called");
 		List<User> users = userService.findAll();
 
 		for (User user : users) {
@@ -70,11 +70,9 @@ public class UserController {
 	/**
 	 * This method saves a User object in database.
 	 * 
-	 * @param user
-	 *            This parameter contains the User object.
-	 * @param ucBuilder
-	 *            This parameter is used to build the Uri that is the location
-	 *            of newly created User.
+	 * @param user This parameter contains the User object.        
+	 * @param ucBuilder This parameter is used to build the Uri that is the location
+	 *            of newly created User.      
 	 * @return
 	 */
 
@@ -93,24 +91,20 @@ public class UserController {
 
 	/**
 	 * 
-	 * @param id
-	 *            This parameter is the user id
+	 * @param id This parameter is the user id   
 	 * @return This method returns response entity
 	 */
 
 	@RequestMapping(value = "/users/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity deleteById(@PathVariable("id") String id) {
-		log.info("hurray called");
 		Long result = userService.removeById(id);
 		return new ResponseEntity(HttpStatus.OK);
 	}
 
 	/**
 	 * 
-	 * @param id
-	 *            This parameter contains the user id
-	 * @param user
-	 *            This parameter contains the user object
+	 * @param id This parameter contains the user id
+	 * @param user This parameter contains the user object
 	 * @return This method returns the Response Entity
 	 */
 

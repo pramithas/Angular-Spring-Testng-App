@@ -3,7 +3,7 @@ package com.pramithas.entity;
 import org.springframework.data.annotation.Id;
 
 /**
- * 
+ * <p> This is a database entity class </p>
  * @author Pramithas Dhakal
  *
  */
