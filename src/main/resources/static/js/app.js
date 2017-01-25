@@ -1,5 +1,5 @@
 angular.module('ngdemo', ['ngdemo.services','ngdemo.controllers', 'ngRoute', 'ngResource']).config(function($routeProvider) {
-	$routeProvider.when('/user-list', {
+	$routeProvider.when('/', {
 		templateUrl : 'partials/user-list.html',
 		controller : 'UserListCtrl'
 	});

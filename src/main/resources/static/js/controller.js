@@ -11,7 +11,7 @@ app.controller('UserListCtrl', ['$scope', 'UsersFactory', 'UserFactory', '$locat
         // callback for ng-click 'deleteUser':
         $scope.deleteUser = function (userId) {
         	UserFactory.delete({ id: userId });
-        	$window.location.href='/#user-list';
+        	$window.location.href='/';
         };
 
         // callback for ng-click 'createUser':
@@ -22,7 +22,6 @@ app.controller('UserListCtrl', ['$scope', 'UsersFactory', 'UserFactory', '$locat
         var findAll=function(){
         	 UsersFactory.fetchAllUsers().then(function(response) {
                  $scope.users = response;
-                 console.log($scope.users);
      		}, function(errResponse) {
      			console.error('Error while fetching Users');
      		});
@@ -37,15 +36,13 @@ app.controller('UserDetailCtrl', ['$scope', '$routeParams', 'UserFactory', '$loc
         // callback for ng-click 'updateUser':
         $scope.updateUser = function () {
             UserFactory.update($scope.user);
-            console.log("User to be updates"+ $scope.user.id)
-            $location.path('/user-list');
+            $location.path('/');
         };
 
         // callback for ng-click 'cancel':
         $scope.cancel = function () {
-            $location.path('/user-list');
+            $location.path('/');
         };
-        console.log($routeParams.id);
         $scope.user = UserFactory.show({id: $routeParams.id});
         console.log($scope.user);
         
@@ -56,13 +53,12 @@ app.controller('UserCreationCtrl', ['$scope','UsersFactory', '$location','$windo
 
         // callback for ng-click 'createNewUser':
         $scope.createNewUser = function () {
-        	console.log("hey hey hey"+ $scope.user);
             UsersFactory.createUser($scope.user);
-            $window.location.href='/#user-list';
+            $window.location.href='/';
         }
         
         // callback for ng-click 'cancel':
         $scope.cancel = function () {
-        	$location.path('/user-list');
+        	$location.path('/');
         };
     }]);

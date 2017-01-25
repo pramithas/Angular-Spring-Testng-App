@@ -23,7 +23,6 @@ services.factory('UsersFactory', ['$http', '$q',function ($http, $q) {
 	}
 
 	function createUser(user) {
-		console.log("hola hoala hola"+user.firstName);
 		var deferred = $q.defer();
 		$http.post(REST_SERVICE_URI, user).then(function(response) {
 			deferred.resolve(response.data);
