@@ -30,14 +30,13 @@ app.controller('UserListCtrl', ['$scope', 'UsersFactory', 'UserFactory', '$locat
        
     }]);
 
-app.controller('UserDetailCtrl', ['$scope', '$routeParams', 'UserFactory', '$location',
-    function ($scope, $routeParams, UserFactory, $location) {
+app.controller('UserDetailCtrl', ['$scope', '$routeParams', 'UserFactory', '$location','$window',
+    function ($scope, $routeParams, UserFactory, $location,$window) {
 
         // callback for ng-click 'updateUser':
         $scope.updateUser = function () {
             UserFactory.update($scope.user);
-            $location.path('/');
-        };
+            $window.location.href='/';        };
 
         // callback for ng-click 'cancel':
         $scope.cancel = function () {
