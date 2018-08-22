@@ -10,4 +10,4 @@ How to run the project?
 How to run test cases?
 
 1) Go the the project root directory.
-2) run "mvn clean package"
+2) run "mvn clean package".
